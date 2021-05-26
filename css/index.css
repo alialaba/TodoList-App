@@ -16,6 +16,9 @@
 .header{
     background: url("../file/daytime.jpg") no-repeat;
     background-size: cover;
-    height:50vh;
-    
+    height:30vh;
+   
+}
+.header-wrap{
+ padding:2em;
 }
