@@ -5,6 +5,13 @@ body{
     background-color: rgba(0,0,0,0.1);
     font-family: 'Titillium Web', sans-serif;
 }
+:root{
+    --box-shadow:0px 10px 30px rgba(57,56,61,0.205);
+    --clr-yellow:#e4a924;
+    --clr-red:#c92142;
+    --clr-green:#37b983;
+    --clr-purple:#9f32b8;
+}
 
 /* ------------ container ------------ */
 .container{
@@ -121,9 +128,48 @@ body{
 .add-to-do i{
     position: absolute;
     font-size: 40px;
-    color: #4162f6;
+    cursor: pointer;
+    /* color: #4162f6; */
 }
-
+.add-to-do .menu{
+    display: none;
+    background-color: #f6f7fc;
+    transition: background-color 0.55s;
+    will-change:background-color ;
+    width: 70px;
+    height: 160px;
+    position: absolute;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+    margin: 10px;
+    border-radius: 5px;
+}
+.add-to-do .menu .menu-item{
+text-decoration: none;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 5px;
+}
+.add-to-do .menu .menu-item:nth-child(1){
+    background: var(--clr-red);
+}
+.add-to-do .menu .menu-item:nth-child(2){
+    background: var(--clr-yellow);
+}
+.add-to-do .menu .menu-item:nth-child(3){
+    background: var(--clr-green);
+}
+.add-to-do .menu .menu-item:nth-child(4){
+    background: var(--clr-purple);
+}
 .add-to-do input{
     position: absolute;
     left: 50px;
@@ -133,6 +179,7 @@ body{
     border: none;
     font-size: 20px;
     padding-left:10px;
+    
 }
 .add-to-do input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #4162f6;

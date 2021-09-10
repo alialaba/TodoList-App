@@ -86,3 +86,8 @@ const dynamicFunction = (e) => {
 }
 input.addEventListener('keyup', addToDoAfterKeypress);
 list.addEventListener('click', dynamicFunction);
+
+
+function triggerMenu() {
+
+}
