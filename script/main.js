@@ -4,7 +4,9 @@ let input = document.querySelector('#input');
 let clearBtn = document.querySelector('.clear');
 let date = document.querySelector('#date');
 
-
+//variable that store a todo
+let LIST = [];
+let id = 0
 // created a function that add a Todolist
 
 const addToDo = () => {
@@ -25,7 +27,15 @@ const addToDoAfterKeypress = (e) => {
     if (e.keyCode === 13) {
         let todo = input.value;// todo has be set to true
         if (todo) {
-            addToDo(todo)
+            addToDo(todo);
+            //data structure that stores todo
+            LIST.push({
+                name: todo,
+                id: id,
+                done: false,
+                trash: false
+            })
+            console.log(LIST);
         }
         input.value = '';
     }
