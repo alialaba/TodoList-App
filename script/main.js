@@ -20,4 +20,15 @@ const addToDo = () => {
     list.insertAdjacentHTML(position, htmlText);
 }
 
-addToDo()
+const addToDoAfterKeypress = (e) => {
+    e.preventDefault();
+    if (e.keyCode === 13) {
+        let todo = input.value;// todo has be set to true
+        if (todo) {
+            addToDo(todo)
+        }
+        input.value = '';
+    }
+}
+
+input.addEventListener('keyup', addToDoAfterKeypress)
