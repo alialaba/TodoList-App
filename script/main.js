@@ -89,9 +89,14 @@ if (data) {
     id = LIST.length;// if last id was 5 then LIST.length returns 6
 } else {
     LIST = [];
-    id = 0
+    id = 0;
 }
 
+//function that clear storage
+const clearStorage = () => {
+    localStorage.clear();
+    location.reload()
+}
 
 
 //when a user click on a button to delete or make a done todo task
@@ -115,7 +120,7 @@ const dynamicFunction = (e) => {
 //eventlisteners
 input.addEventListener('keyup', addToDoAfterKeypress);
 list.addEventListener('click', dynamicFunction);
-// clearBtn.addEventListener('click', clearStorage);
+clearBtn.addEventListener('click', clearStorage);
 
 // let downBtn = document.querySelector('.add-to-do > i');
 // function triggerMenu() {
