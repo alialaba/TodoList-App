@@ -132,7 +132,7 @@ body{
     /* color: #4162f6; */
 }
 .add-to-do .menu{
-    display: none;
+    /* visibility:hidden; */
     background-color: #f6f7fc;
     transition: background-color 0.55s;
     will-change:background-color ;
@@ -148,6 +148,9 @@ body{
     margin: 10px;
     border-radius: 5px;
 }
+.add-to-do .menu .show{
+    /* visibility: visible; */
+}
 .add-to-do .menu .menu-item{
 text-decoration: none;
 width: 30px;
@@ -157,6 +160,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin: 5px;
+
 }
 .add-to-do .menu .menu-item:nth-child(1){
     background: var(--clr-red);

@@ -7,6 +7,8 @@ let date = document.querySelector('#date');
 //variable that store a todo
 let LIST = [];
 let id = 0
+//variable that restore todo from localstorage
+let data = localStorage.getItem('TODOS'); //true
 
 //classes selector
 let CHECK = 'fa-check-circle';
@@ -66,12 +68,33 @@ const completeTodo = (element) => {
     //upate our data structure
     LIST[element.id].done = LIST[element.id].done ? false : true;
 }
-
+// function that remove a todo from the lists
 const removeTodo = (element) => {
     element.parentElement.parentElement.removeChild(element.parentElement);
     //upate our data structure
     LIST[element.id].trash = true;
 }
+//function that restore localstorage
+const loadData = (arr) => {
+    arr.forEach((item) => {
+        addToDo(item.name, item.id, item.done, item.trash)
+    })
+}
+
+
+//condition that checks if their is todo list in localstorage
+if (data) {
+    LIST = JSON.parse(data);
+    loadData(LIST); //load todo to the UI phase;
+    id = LIST.length;// if last id was 5 then LIST.length returns 6
+} else {
+    LIST = [];
+    id = 0
+}
+
+
+
+//when a user click on a button to delete or make a done todo task
 const dynamicFunction = (e) => {
     //variable
     let element = e.target;
@@ -83,11 +106,21 @@ const dynamicFunction = (e) => {
         removeTodo(element);
     }
 
+    //set or update todolist to localstorage
+    localStorage.setItem('TODOS', JSON.stringify(LIST))
 }
+
+
+
+//eventlisteners
 input.addEventListener('keyup', addToDoAfterKeypress);
 list.addEventListener('click', dynamicFunction);
+// clearBtn.addEventListener('click', clearStorage);
 
-
-function triggerMenu() {
-
-}
+// let downBtn = document.querySelector('.add-to-do > i');
+// function triggerMenu() {
+//     let menu = document.querySelector('.menu');
+//     let x = menu.classList.toggle('show')
+//     console.log(x)
+// }
+// downBtn.addEventListener('click', triggerMenu)
