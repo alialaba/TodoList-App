@@ -129,3 +129,19 @@ clearBtn.addEventListener('click', clearStorage);
 //     console.log(x)
 // }
 // downBtn.addEventListener('click', triggerMenu)
+
+
+
+//color theme switcher
+let content = document.querySelector('.content');
+let menuItems = document.querySelectorAll('.menu-item');
+function buttonClick() {
+    if (this.classList.contains('menu-item')) {
+        content.style.backgroundColor = `#${this.getAttribute('data-background')}`
+    }
+}
+for (let i = 0; i < menuItems.length; i++) {
+    menuItems[i].addEventListener('click', buttonClick)
+}
+
+

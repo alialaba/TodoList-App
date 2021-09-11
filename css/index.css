@@ -149,7 +149,7 @@ body{
     border-radius: 5px;
 }
 .add-to-do .menu .show{
-    /* visibility: visible; */
+    visibility: visible;
 }
 .add-to-do .menu .menu-item{
 text-decoration: none;
@@ -160,6 +160,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin: 5px;
+/* animation-duration: 0s;
+animation-name: close; */
 
 }
 .add-to-do .menu .menu-item:nth-child(1){
@@ -174,6 +176,27 @@ margin: 5px;
 .add-to-do .menu .menu-item:nth-child(4){
     background: var(--clr-purple);
 }
+/**active colors*/
+/* .menu-item__active.menu-item__red{
+    background: var(--clr-red);
+}
+.menu-item__active.menu-item__yellow{
+    background: var(--clr-yellow);
+}
+.menu-item__active.menu-item__green{
+    background: var(--clr-green);
+}
+.menu-item__active.menu-item__purple{
+    background: var(--clr-purple);
+
+} */
+/* .menu-item__animate{
+    animation-duration: 0.5s;
+}
+.menu-item__active{
+    width: 17rem;
+    animation-name: open;
+} */
 .add-to-do input{
     position: absolute;
     left: 50px;
