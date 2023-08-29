@@ -63,7 +63,6 @@
   }
   main {
     flex: 1 1 0%;
-    /* background: var(--darker); */
     padding: 1rem;
     border-radius: 1rem;
     font-size: 1.25rem;
