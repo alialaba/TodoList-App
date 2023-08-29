@@ -48,7 +48,20 @@ window.addEventListener("load", function(){
             tasksEl.appendChild(taskEl)
 
             //clear input field
-            input.value = ""
+            input.value = "";
+
+              //edit task input
+         btnEdit.addEventListener("click", function(){
+            if(btnEdit.textContent.toLowerCase() === "edit"){
+             btnEdit.textContent = "Save";
+             taskText.removeAttribute("readonly")
+            }else{
+             btnEdit.textContent = "Edit";
+             taskText.setAttribute("readonly", "readonly")
+            }
+         })
+
+
 
 
         }  
