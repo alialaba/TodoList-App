@@ -61,7 +61,11 @@ window.addEventListener("load", function(){
             }
          })
 
-
+            //delete task
+            btnDelete.addEventListener("click", function(){
+                 tasksEl.removeChild(taskEl);
+   
+            })
 
 
         }  
