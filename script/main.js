@@ -1,5 +1,5 @@
 
-window.addEventListener("load", function(){
+// window.addEventListener("load", function(){
 
     //Select Element
     const form = document.getElementById("todos__form");
@@ -10,6 +10,15 @@ window.addEventListener("load", function(){
 
         //prevent form reload
         e.preventDefault();
+    
+        createTask(input);
+        
+    })
+
+
+
+    //create task func
+    function createTask (inputValue){
 
         if(input.value !== ""){
             //Create Elements
@@ -29,13 +38,13 @@ window.addEventListener("load", function(){
             btnDelete.classList.add("task__delete");
 
             //get input value
-            const inputValue = input.value.trim();
+            const inputText = inputValue.value.trim();
 
             //Set attributes
             taskText.setAttribute("readonly", "readonly");
 
             //Set Values
-            taskText.value = inputValue;
+            taskText.value = inputText;
             btnDelete.textContent = "Delete";
             btnEdit.textContent ="Edit";
 
@@ -50,29 +59,12 @@ window.addEventListener("load", function(){
             //clear input field
             input.value = "";
 
-              //edit task input
-         btnEdit.addEventListener("click", function(){
-            if(btnEdit.textContent.toLowerCase() === "edit"){
-             btnEdit.textContent = "Save";
-             taskText.removeAttribute("readonly")
-            }else{
-             btnEdit.textContent = "Edit";
-             taskText.setAttribute("readonly", "readonly")
-            }
-         })
-
-            //delete task
-            btnDelete.addEventListener("click", function(){
-                 tasksEl.removeChild(taskEl);
-   
-            })
-
 
         }  
 
-        
-    
-        
-    })
+    }
 
-})
+// })
+
+
+
