@@ -86,6 +86,22 @@ function createTodoElement(item){
     itemEl.append(actionsEl);
 
 
+    //Events
+
+    checkBoxEl.addEventListener("change", ()=>{
+        item.complete = checkBoxEl.checked;
+        item.complete ? itemEl.classList.add("complete") : itemEl.classList.remove("complete");
+    })
+
+    inputTextEl.addEventListener("blur", ()=>{
+        inputTextEl.setAttribute("disabled", "")
+    })
+
+    editBtn.addEventListener("click", ()=>{
+        inputTextEl.removeAttribute("disabled");
+        inputTextEl.focus()
+    })
+
     //return destruced objects
     return {itemEl, inputTextEl}
 
