@@ -37,6 +37,8 @@ function createNewTodo(){
     inputTextEl.removeAttribute("disabled");
     inputTextEl.focus();
 
+    Save()
+
 }
 
 function createTodoElement(item){
@@ -91,19 +93,39 @@ function createTodoElement(item){
     checkBoxEl.addEventListener("change", ()=>{
         item.complete = checkBoxEl.checked;
         item.complete ? itemEl.classList.add("complete") : itemEl.classList.remove("complete");
+
+        Save()
     })
 
     inputTextEl.addEventListener("blur", ()=>{
-        inputTextEl.setAttribute("disabled", "")
+        inputTextEl.setAttribute("disabled", "");
+
+        Save();
+    })
+    inputTextEl.addEventListener("input", ()=>{
+        item.text = inputTextEl.value;
     })
 
     editBtn.addEventListener("click", ()=>{
         inputTextEl.removeAttribute("disabled");
-        inputTextEl.focus()
+        inputTextEl.focus();
+    });
+
+    deleteBtn.addEventListener("click", ()=>{
+        todos = todos.filter((todo)=> todo.id !== item.id );
+        itemEl.remove()
+
+        Save();
     })
 
     //return destruced objects
     return {itemEl, inputTextEl}
 
+
+}
+
+
+
+function Save(){
 
 }
