@@ -3,24 +3,45 @@
 
     //Select Element
     const form = document.getElementById("todos__form");
-    const input = document.getElementById("todos__input");
+   const taskInput = document.getElementById("todos__input");
     const tasksEl = document.querySelector(".tasks");
 
+
+    //add all task list
+    let tasksList = []
+
+    let taskId = 0;
     form.addEventListener("submit", function(e){
 
         //prevent form reload
         e.preventDefault();
-    
-        createTask(input);
-        
+
+      //get task input value
+      let  taskInputValue =  taskInput.value.trim();
+
+        if(taskInputValue !== ""){
+            createTask(taskInputValue);
+
+            tasksList.push({task: taskInputValue , id: taskId })
+        }
+
+        //increase new task
+        taskId++
+        console.log(tasksList)
+
+        //clear input field
+        taskInput.value = " ";
+
     })
 
 
+    // const editBtns = document.querySelectorAll(".task__edit");
 
+    // console.log(editBtns)
+
+    
     //create task func
     function createTask (inputValue){
-
-        if(input.value !== ""){
             //Create Elements
             const taskEl = document.createElement("div");
             const taskContent = document.createElement("div");
@@ -38,7 +59,7 @@
             btnDelete.classList.add("task__delete");
 
             //get input value
-            const inputText = inputValue.value.trim();
+            const inputText = inputValue;
 
             //Set attributes
             taskText.setAttribute("readonly", "readonly");
@@ -56,15 +77,8 @@
             taskEl.appendChild(taskActions)
             tasksEl.appendChild(taskEl)
 
-            //clear input field
-            input.value = "";
-
+            
 
         }  
-
-    }
-
-// })
-
 
 

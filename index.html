@@ -1,52 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo App List</title>
-    <!-- custom css  -->
-    <link rel="stylesheet" href="css/index.css">
-    <!-- Font awesome -->
-    <script src="https://kit.fontawesome.com/76ab3948f6.js" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task App</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="/css/index.css">
 </head>
-
 <body>
-    <header class="todos__header">
-        <h1>Todolist app</h1>
-        <form id="todos__form">
-          <input
-            type="text"
-            id="todos__input"
-            placeholder="What do you want to do"
-          />
-          <input type="submit" value="create" id="todos__btn" />
-        </form>
-      </header>
-      <main>
-        <section class="todos__list">
-          <h2>Tasks</h2>
-          <div class="tasks">
-            <!-- <div class="task">
-              <div class="task__content">
-                <input
-                  type="text"
-                  value="shiny task"
-                  class="task__text"
-                  readonly
-                />
-              </div>
-              <div class="task__actions">
-                <button class="task__edit">Edit</button>
-                <button class="task__delete">Delete</button>
-              </div>
-            </div> -->
-          </div>
-        </section>
-      </main>
-  
-    <script src="script/main.js"></script>
-</body>
+	
+	<main>
 
+		<div class="app">
+
+			<header>
+				<h1> Todos</h1>
+				<button id="create">Add new todo</button>
+			</header>
+
+			<div class="todo-list" id="todolist">
+
+				<!-- <div class="item">
+					<input type="checkbox" />
+					<input 
+						type="text" 
+						value="Todo content goes here" 
+						disabled />
+					<div class="actions">
+						<button class="material-icons">edit</button>
+						<button class="material-icons remove-btn">delete</button>
+					</div>
+				</div> -->
+
+			</div>
+
+		</div>
+
+	</main>
+
+	<script src="/script/script.js"></script>
+	<!-- <script src="/script/testing.js"></script> -->
+</body>
 </html>
