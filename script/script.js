@@ -3,17 +3,12 @@ const todolist = document.getElementById("todolist");
 
 let todos =[];
 
-
-
 //Event to create new todo plus hoisting
 createTodoBtn.addEventListener("click", createNewTodo);
 
 
 //function to create todo
 function createNewTodo(){
-
-
-
     // data structure 
     const item ={
         id: new Date().getTime(),
@@ -21,14 +16,10 @@ function createNewTodo(){
         complete: false
     }
 
-
-
     //object destructuring and closure 
     const {itemEl, inputTextEl} = createTodoElement(item);
 
-    console.log(itemEl);
-    console.log(inputTextEl);
-
+    //add new todo item on top
     todos.unshift(item);
     console.log(todos)
 
@@ -124,8 +115,34 @@ function createTodoElement(item){
 
 }
 
+//display all todos available in the localstorage
+function displayTodos(){
+    load();
+
+    for(let i = 0 ; i < todos.length; i++){
+        let item = todos[i];
+       
+        //append destructed object element
+        const {itemEl} = createTodoElement(item);
+        todolist.append(itemEl)
+    }
+}
+
+displayTodos()
 
 
+
+//load todolist from localstorage
+function load(){
+
+    const data = JSON.parse(localStorage.getItem("todos"));
+    if(data){
+        todos = data;
+    }
+}
+
+//set todos to localstorage
 function Save(){
-
+    const savedTodos = localStorage.setItem("todos", JSON.stringify(todos));
+    return savedTodos;
 }
